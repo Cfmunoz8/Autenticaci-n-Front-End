@@ -16,8 +16,7 @@ function Login() {
   }, [infoLogin]);
   const submitForm = (e) => {
     e.preventDefault();
-
-    actions.loginProfessional(infoLogin, navigate);
+    actions.login(infoLogin, navigate);
   };
 
   return (
@@ -33,7 +32,7 @@ function Login() {
             </label>
             <input
               type="text"
-              name="rut"
+              name="email"
               className="form-control"
               id="exampleFormControlInput1"
               placeholder="Ingresar  email"

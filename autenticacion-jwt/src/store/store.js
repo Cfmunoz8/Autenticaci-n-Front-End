@@ -53,6 +53,16 @@ export const getState = ({ getActions, getStore, setStore }) => {
             .then((res) => res.json())
             .then((result) => setStore({ users: result }));
         },
+
+        private: (navigate) => {
+
+          if (localStorage.getItem("access_token")) {
+            navigate("/private");
+          }
+          else {
+            navigate("/");
+          }
+        }
       },
     };
   };

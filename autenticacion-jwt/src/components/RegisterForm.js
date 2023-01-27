@@ -6,22 +6,23 @@ import { Context } from "../store/context";
 
 function RegisterForm() {
   const { store, actions } = useContext(Context);
-  const [infoPatient, setInfoPatient] = useState({
+  const [info, setInfo] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
   const onChange = (e) => {
-    setInfoPatient({ ...infoPatient, [e.target.name]: e.target.value });
+    setInfo({ ...info, [e.target.name]: e.target.value });
   };
-  useEffect(() => {}, [infoPatient]);
+  useEffect(() => {}, [info]);
   const submitForm = (e) => {
     e.preventDefault()
+    actions.signup(info);
   };
 
   const verifyPassword = () => {
-    if (infoPatient?.password !== infoPatient?.confirmPassword) {
+    if (info?.password !== info?.confirmPassword) {
       return (
         <p className="text-danger ms-2">
           {" "}

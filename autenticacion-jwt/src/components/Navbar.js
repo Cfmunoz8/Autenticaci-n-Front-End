@@ -1,7 +1,6 @@
 import { React, useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/context";
-import icono1 from "../images/icono1.png";
 
 function Navbar(props) {
   const navigate = useNavigate();
@@ -15,23 +14,11 @@ function Navbar(props) {
           <img
             className="img img-fluid me-4"
             style={{ width: "45px" }}
-            src={icono1}
             alt="logo"
           />
           <Link className="navbar-brand" to="/">
             Home
           </Link>
-          </div>
-          <div className="navbar-nav">
-            <Link className="nav-link" aria-current="page" to={props.link1}>
-              {props.item1}
-            </Link>
-            <Link className="nav-link" to={props.link2}>
-              {props.item2}
-            </Link>
-            <Link className="nav-link" to={props.link3}>
-              {props.item3}
-            </Link>
           </div>
           <div className="dropdown">
             {props.header}
@@ -50,7 +37,7 @@ function Navbar(props) {
                   className="dropdown-item"
                   onClick={() => actions.logout(navigate)}
                 >
-                  {props.dropdownItem2}
+                  Cerrar sesión
                 </button>
               </li>
             </ul>
